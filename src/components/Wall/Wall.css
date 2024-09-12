@@ -1,0 +1,36 @@
+.wall{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.heading-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.heading{
+  color: var(--black);
+  background-color: var( --gray);
+  padding: 30px;
+  border-radius: 5px;
+}
+.add-btn{
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  color:var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 4px;
+  font-size: 14px;
+  width: fit-content;
+  padding: 15px 15px;
+}
+.notes-container{
+  display: flex;
+ flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
