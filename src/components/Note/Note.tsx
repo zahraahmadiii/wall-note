@@ -16,7 +16,6 @@ export const Note: React.FC<NoteProps> = ({
   message,
   date,
   deadline,
-  priority,
   onDelete,
   onEdit,
   onMove,
