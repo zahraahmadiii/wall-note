@@ -5,19 +5,28 @@ interface NoteProps {
   message: string;
   date: string;
   deadline: string;
+  priority: number;
   onDelete: (id: number) => void;
   onEdit: () => void;
+  onMove: (id: number) => void;
+  isMoving: boolean;
 }
 export const Note: React.FC<NoteProps> = ({
   id,
   message,
   date,
   deadline,
+  priority,
   onDelete,
   onEdit,
+  onMove,
+  isMoving,
 }) => {
   const handleDelete = () => {
     onDelete(id);
+  };
+  const handleMove = () => {
+    onMove(id);
   };
   const [isDeadlinePassed, setIsDeadlinePassed] = useState(false);
   useEffect(() => {
@@ -31,12 +40,11 @@ export const Note: React.FC<NoteProps> = ({
     }
   }, [deadline]);
 
-
   return (
     <div
       className={`note-container ${
         isDeadlinePassed ? "bg-red-300" : "bg-white"
-      }`} 
+      } ${isMoving ? "border-yellow-400" : ""}`}
     >
       <div className="text-container">
         <h3 className="note_title">{message}</h3>
@@ -49,6 +57,9 @@ export const Note: React.FC<NoteProps> = ({
         </button>
         <button className="edit-btn" onClick={onEdit}>
           Edit
+        </button>
+        <button className="move-btn" onClick={handleMove}>
+          {isMoving ? "Selected" : "Move"}
         </button>
       </div>
     </div>

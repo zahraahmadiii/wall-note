@@ -67,3 +67,13 @@
   width: 60px;
   padding: 10px 10px;
 }
+.move-btn{
+  border: 1px solid var(--black);
+  color:var(--black);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2px;
+  font-size: 12px;
+  width: 70px;
+  padding: 10px 10px;
+}
